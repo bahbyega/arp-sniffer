@@ -3,10 +3,15 @@ import socket
 from typing import Tuple
 
 from oui_lookup import get_mac_vendor
-from parser import parse_ethernet_header, parse_arp_header
+from arp_parser import parse_ethernet_header, parse_arp_header
 
 
 def print_arp_header(arp_header: Tuple, full: bool = False):
+    """
+    Print header of ARP packet.
+    @param arp_header: tuple of ARP header fields in binary format
+    @param full: whether to print all of the header fields or a short version
+    """
     (
         htype,
         ptype,
@@ -41,7 +46,7 @@ def print_arp_header(arp_header: Tuple, full: bool = False):
         print("*********************************************************************\n")
     else:
         print("*************************** ARP_PACKET_INFO *************************")
-        print(f"Protocol type:    {operation}")
+        print(f"Type:             {operation}")
         print(f"Source MAC:       {src_mac}, man: {src_mac_manufacturer}")
         print(f"Destination MAC:  {dest_mac}, man: {dest_mac_manufacturer}")
         print("*********************************************************************\n")
