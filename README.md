@@ -4,7 +4,7 @@ More about ARP can be found at [RFC 826](https://datatracker.ietf.org/doc/html/r
 
 ## Requirements
 - Linux
-- Python 3.8+
+- Python 3
 
 ## Usage
 To run program use:
